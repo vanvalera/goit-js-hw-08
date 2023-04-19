@@ -22,7 +22,9 @@ function updateFeedbackData(event) {
 }
 function onFormSubmitting(event) {
   event.preventDefault();
-
+  if (refs.email.value === '' || refs.textarea.value === '') {
+    alert('Будь ласка, заповніть всі поля форми.');
+  }
   console.log(feedbackData);
 
   localStorage.removeItem(STORAGE_KEY);
